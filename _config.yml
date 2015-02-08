@@ -1,0 +1,23 @@
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            Sameer Manek
+tagline:          'data science, hbs, jhu'
+url:              http://sameermanek.github.io
+paginate:         5
+baseurl:          /
+author:
+  name:           Sameer Manek
+  url:            http://sameermanek.github.io
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/poole/poole
+
+pages_list:
+    Photos: 'https://www.flickr.com/photos/sameermanek/'
+    Archive: '/archive/'
+    About: '/about/'

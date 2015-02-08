@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Sameer Manek</title>
+ <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
+ <link href="http://sameermanek.github.io/"/>
+ <updated>2015-02-07T22:35:39-05:00</updated>
+ <id>http://sameermanek.github.io</id>
+ <author>
+   <name>Sameer Manek</name>
+   <email></email>
+ </author>
+
+ 
+
+</feed>
