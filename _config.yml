@@ -19,5 +19,6 @@ github:
 
 pages_list:
     Photos: 'https://www.flickr.com/photos/sameermanek/'
+    Projects: '/projects/'
     Archive: '/archive/'
     About: '/about/'
