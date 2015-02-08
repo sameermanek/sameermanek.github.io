@@ -4,7 +4,7 @@ relative_permalinks: true
 
 # Setup
 title:            Sameer Manek
-tagline:          'data science, hbs, jhu'
+tagline:          ''
 url:              http://sameermanek.github.io
 paginate:         5
 baseurl:          /
