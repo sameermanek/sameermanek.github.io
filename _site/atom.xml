@@ -4,13 +4,85 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2015-02-08T16:23:21-05:00</updated>
+ <updated>2015-02-09T13:04:45-05:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>An Data-Based Analysis of Hacker News</title>
+   <link href="http://sameermanek.github.io//2015/02/09/hn-analysis/"/>
+   <updated>2015-02-09T00:00:00-05:00</updated>
+   <id>http://sameermanek.github.io/2015/02/09/hn-analysis</id>
+   <content type="html">&lt;p&gt;Or: 2048 Con, asking Edward.&lt;/p&gt;
+
+&lt;p&gt;After spending a little too much time reading Hacker News, I decided to take a more systematic look at what ends up on HN and what does well. This analysis inspired the alternate title – read on to find out more.&lt;/p&gt;
+
+&lt;p&gt;As a quick reminder, &lt;a href=&quot;https://news.ycombinator.com&quot;&gt;Hacker News&lt;/a&gt; is a website about a wide-range of subjects – everything from &lt;a href=&quot;https://news.ycombinator.com/item?id=9015092&quot;&gt;philosophy&lt;/a&gt; and &lt;a href=&quot;https://news.ycombinator.com/item?id=8940723&quot;&gt;design&lt;/a&gt; to &lt;a href=&quot;https://news.ycombinator.com/item?id=8980047&quot;&gt;job postings&lt;/a&gt; and &lt;a href=&quot;https://news.ycombinator.com/item?id=9018247&quot;&gt;programming languages&lt;/a&gt;. Hacker News, or as my classmates called it “that hacker website”, is frequently compared to &lt;a href=&quot;http://reddit.com&quot;&gt;reddit&lt;/a&gt;. A similar &lt;a href=&quot;http://www.randalolson.com/2013/03/15/a-data-driven-guide-to-creating-successful-reddit-posts/&quot;&gt;analysis&lt;/a&gt; of reddit was pretty interesting, so I wanted to explore how Hacker News would compare (albeit with a more exploratory approach).&lt;/p&gt;
+
+&lt;p&gt;Of note: I did this entirely for fun; don’t take it too seriously.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-are-posts-written&quot;&gt;When are posts written?&lt;/h2&gt;
+
+&lt;p&gt;More items are posted on weekdays, generally around midday (EST). This is consistent with my expectations – that most people who post on Hacker News are doing so from the US and Europe. 
+&lt;img src=&quot;/assets/posts.png&quot; alt=&quot;Plot of posts by day&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Interestingly, if we overlay each day on the same scale, we can see that posts occur later on weekends and continue into the night. I.e., I’m not the only one who’s wasted a Saturday night on Hacker News!
+&lt;img src=&quot;/assets/posts_hour.png&quot; alt=&quot;Plot of posts by time&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In terms of popularity of posts, there’s little relationship between time of day and popularity.
+&lt;img src=&quot;/assets/points.png&quot; alt=&quot;Plot of average points vs time&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You may have noticed that there is a relationship between day of week and popularity of the posts. This relationship is statistically signifiant (using a non-parametric &lt;a href=&quot;http://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test&quot;&gt;Mann-Whitney U Test&lt;/a&gt;) and I think more clear using boxplots.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/points_day.png&quot; alt=&quot;Plot of points by day&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-posted&quot;&gt;What is posted?&lt;/h2&gt;
+&lt;p&gt;One of the most interesting things to me about Hacker News is the diversity of posts. Below is a plot that shows how frequently a post comes from any site in each month. A couple slight caveats though: I only included sites that accounted for ≥2% of the posts in a month (everything else is in the ‘Other’ category), and I foolishly included ‘co.uk’ as it’s own site. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/diversity.png&quot; alt=&quot;Plot of sources&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is pretty clear that while there is a tech focus (techcrunch, ycombinator, wired, etc), no single site accounts for more than a tiny portion of the posts. I repeated this analysis for high scoring posts (&amp;gt; 100 points) and found essentially the same result. For comparison, roughly 60% of posts on reddit link to imgur. &lt;/p&gt;
+
+&lt;p&gt;I did a similar analysis of the users who submitted posts and high-scoring posts and again found very limited concentration.&lt;/p&gt;
+
+&lt;p&gt;Now, on to topics. To begin, I wanted to see whether it was possible to categorize topics based only on their title. Of course, I first made a wordcloud of the titles (very important step in the scientific process).
+&lt;img src=&quot;/assets/wordcloud_all.png&quot; alt=&quot;Wordcloud of titles&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I found that, using a k-means clustering algorithm (an unsupervised learning technique) on the overlapping words, I was able to create categories that seemed pretty meaningful. However, I found that these categories were not robust; i.e., when I reran the clustering algorithm I’d get new categories. The few that were fairly consistent were: Show/Ask HN, Google, and Windows/Microsoft. A few of the categories shown below are pretty interesting: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The ‘attack’ category includes both ‘nuclear’ and ‘ddos’. &lt;/li&gt;
+  &lt;li&gt;The ‘color’ category includes both ‘blind’ and ‘palette’&lt;/li&gt;
+  &lt;li&gt;The ‘day’ category includes ‘zero’ and ‘demo’&lt;/li&gt;
+  &lt;li&gt;There’s an entire category for ‘love tablet’. It is best not to examine this too much.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/wordcloud_25.png&quot; alt=&quot;Wordcloud of categories&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This shouldn’t be too surprising. Working with very short ‘documents’ means that coincident single words will define entire categories. This technique works better when you can compare longer documents. &lt;/p&gt;
+
+&lt;p&gt;More seriously, in the future I’d like to see whether I can find a better way to categorize the posts, likely using the content on page they link to (difficult) or comments on HN (more doable).&lt;/p&gt;
+
+&lt;p&gt;I then wanted to see whether any words were strong predictors of high/low scores. To do so, I ran linear regressions on the number of points for each post, and the presence of each word in that post. For example, I would look for a correlation between the number of uses of the word ‘google’ in a title and the points that post scored. Because the number of uses in the word is generally binary (either 0 or 1), this is roughly the same as asking “is the average score higher for titles using this word than for titles not using this word?”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/word_scatterplot.png&quot; alt=&quot;Scatterplot of words vs score&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I then filtered these out to exclude uncommon words and words with an insignificant impact on the total point scored and found the following.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/significant_words.png&quot; alt=&quot;Expected increase in score by word&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So using words like ‘iphone’ and ‘hn’ are correlated to lower scores, but words like ‘2048’ and ‘broke’ correspond to higher point totals. Apparently using ‘hn’ &lt;a href=&quot;https://news.ycombinator.com/item?id=7988216&quot;&gt;three times&lt;/a&gt; in &lt;a href=&quot;https://news.ycombinator.com/item?id=8561849&quot;&gt;one title&lt;/a&gt; didn’t help improve scores (or maybe these posts were just a little too meta).&lt;/p&gt;
+
+&lt;h2 id=&quot;concluding-thoughts&quot;&gt;Concluding thoughts&lt;/h2&gt;
+&lt;p&gt;While none of the findings here are all that important, I think they are rather interesting. Especially the last few items: the (in)ability to classify only using the title and the relative importance of some titles over others.&lt;/p&gt;
+
+&lt;p&gt;More broadly, lots of these same tactics can be useful for more serious work, and it’s nice to have a data set on which to practice.&lt;/p&gt;
+</content>
+ </entry>
  
 
 </feed>
