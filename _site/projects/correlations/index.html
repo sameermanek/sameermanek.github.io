@@ -58,9 +58,9 @@
       <main>
         <article class="project">
   <h1 class="page-title">Random Correlations</h1>
-  <p>I’ve noticed that people frequently misusing data to find correlations between seemingly unrelated data sets and inferring a relationship. While they’ll generally volunteer that they haven’t proven causality, they frequently claim that there <em>must be</em> some relationship for the p value to be so low. </p>
+  <p>I’ve noticed people frequently misusing data to find correlations between seemingly unrelated data sets and inferring a relationship. While they’ll generally volunteer that they haven’t proven causality, they frequently claim that there <em>must be</em> some underlying relationship for the p value to be so low. </p>
 
-<p>I built a toy to try and show the error in this. Essentially, you can take almost any real life data and infer a relationship. Here I took a number of data sets from <a href="quandl.com">Quandl</a> to show that there are relationships with very low p-values just by chance.</p>
+<p>I built a toy to try and show the error in this. Essentially, you can take almost any real life data and infer a relationship, especially if you perform multiple tests. Here I take a number of data sets from <a href="quandl.com">Quandl</a> and plot whichever have very low p-values.</p>
 
 <p>Wait for it to load, then hit the “Another Relationship!” button</p>
 
@@ -69,10 +69,10 @@
 <p>The causes of these ‘relationships’ vary, but a few key factors that I think are generally worth checking. These don’t invalidate the slope or intercept, but they may call the test statistics into question (e.g., p value). </p>
 
 <ul>
-  <li>Are the errors normally distributed?</li>
+  <li>Are the residuals normally distributed?</li>
   <li>What if I detrend the data?</li>
-  <li>Are the errors autocorrelated?</li>
-  <li>Do the errors have constant variance?</li>
+  <li>Are the residuals autocorrelated?</li>
+  <li>Do the residuals have constant variance?</li>
   <li>Are there any points with a lot of leverage?</li>
   <li>How many relationships did I test before finding this? Do I need to apply a multiple testing correction?</li>
 </ul>
@@ -84,7 +84,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-02-10T00:16:40-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-02-10T08:47:44-05:00">2015</time>. All rights reserved.
         </small>
       </footer>
     </div>
