@@ -1,0 +1,21 @@
+
+	ul.projects-list li{
+	  clear:both;
+	  margin-top:40px;
+	}
+    ul.projects-list img{
+      float:left;
+      max-height:160px;
+      max-width:160px;
+    }
+
+    ul.projects-list a{
+      color:black;
+      display: block;
+      overflow: auto;
+    }
+    
+    .project_desc {
+      margin-left:10px;
+    }
+    
