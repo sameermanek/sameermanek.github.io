@@ -4,7 +4,7 @@ layout: project
 ---
 I've noticed people frequently misusing data to find correlations between seemingly unrelated data sets and inferring a relationship. While they'll generally volunteer that they haven't proven causality, they frequently claim that there *must be* some underlying relationship for the p value to be so low. 
 
-I built a toy to try and show the error in this. Essentially, you can take almost any real life data and infer a relationship, especially if you perform multiple tests. Here I take a number of data sets from [Quandl](quandl.com) and plot whichever have very low p-values.
+I built a toy to try and show the error in this. Essentially, you can take almost any real life data and infer a relationship, especially if you perform multiple tests. Here I take a number of data sets from [Quandl](http://quandl.com) and plot whichever have very low p-values.
 
 Wait for it to load, then hit the "Another Relationship!" button
 
