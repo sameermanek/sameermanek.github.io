@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Data-Based Analysis of Hacker News
+title: A Data-Based Analysis of Hacker News
 ---
 
 Or: 2048 Con, asking Edward.
