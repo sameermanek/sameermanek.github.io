@@ -4,7 +4,7 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2015-02-16T10:42:31-06:00</updated>
+ <updated>2015-03-28T14:39:10-04:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
@@ -13,9 +13,48 @@
 
  
  <entry>
-   <title>An Data-Based Analysis of Hacker News</title>
+   <title>To log or not to log Part 1</title>
+   <link href="http://sameermanek.github.io//2015/03/28/log-scales-1/"/>
+   <updated>2015-03-28T00:00:00-04:00</updated>
+   <id>http://sameermanek.github.io/2015/03/28/log-scales-1</id>
+   <content type="html">&lt;p&gt;I’ve noticed a frustrating phenomenon: the use of linear scales where a log scale would be much more appropriate. While people are more conscientious of deceptive charts now more than ever, misleading scales continue to be an issue. This is my brief rant against them. &lt;/p&gt;
+
+&lt;p&gt;While I have no idea whether this choice of scales is intentional or oversight, increasing awareness of users and makers seems like a suitable first step regardless. The purpose of this post and the following (short/occasional) series of posts is to give good reasons and cases in which log scales should be used.&lt;/p&gt;
+
+&lt;h2 id=&quot;exponential-growth&quot;&gt;Exponential Growth&lt;/h2&gt;
+&lt;p&gt;This is the most obvious case for using a log scale rather than a linear scale. It seems like a forgone conclusion that when plotting a timeseries of values which naturally grow exponentially, one should use a log scale. &lt;/p&gt;
+
+&lt;h3 id=&quot;singapore&quot;&gt;Singapore&lt;/h3&gt;
+&lt;p&gt;Nonetheless, in the past week alone I’ve seen &lt;a href=&quot;http://www.hbs.edu/faculty/units/bgie/Pages/default.aspx&quot; title=&quot;BGIE Department, where the flaw was found&quot;&gt;Harvard Business School&lt;/a&gt; and &lt;a href=&quot;http://www.economist.com/&quot;&gt;The Economist&lt;/a&gt; inappropriately use linear scales. Both extremely well-respected and generally unbiased, they nonetheless presented quite misleading views.&lt;/p&gt;
+
+&lt;p&gt;For example, the &lt;a href=&quot;http://www.economist.com/blogs/graphicdetail/2015/03/lee-kuan-yews-singapore&quot; title=&quot;Lee Kuan Yew&#39;s Singapore&quot;&gt;Economist presented a graph&lt;/a&gt; quite like the one below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gdp_linear.png&quot; alt=&quot;Plot of GDP per Capita&quot; /&gt; &lt;/p&gt;
+
+&lt;p&gt;They concluded that this graph clearly showed how dramatic Singapore’s rise has been. While I agree with the conclusion, their visualization made it nearly impossible to tell that China’s rise has been similarly outstanding (even more so in the past 2 decades), or that post-war Japan was similarly meteoric. A better graph would have been the one below, with a log scale. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gdp_log.png&quot; alt=&quot;Plot of GDP per Capita with a Log Scale&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;nigeria&quot;&gt;Nigeria&lt;/h3&gt;
+&lt;p&gt;In a nearly identical situation, a professor of mine presented a graph like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gdp_nigeria_linear.png&quot; alt=&quot;Plot of GDP per Capita of Nigeria&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;She claimed that this showed how Nigeria was struggling against the other BRINCS countries (Brazil, Russia, India, Nigeria, China, South Africa). To potentially oversimplify a long and complex history, Nigeria has been seen as a future economic powerhouse for the past 50 years, but various political, regional, and social issues have interfered. However, there has been substantial growth over the past decade and a half under the most recent series of leaders. The graph presented barely showed an uptick in GDP per capita, when in reality, GDP growth in the 2000s has been over 3%, in line with some other resource-dependent BRINCS countries (Brazil and South Africa). I think this point would have been clear had a log scale been used:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gdp_nigeria_log.png&quot; alt=&quot;Plot of GDP per Capita of Nigeria&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Exponential growth is the most straightforward case. While both the examples above were related to money, it truly applies to any case of exponential growth: money, population, etc. &lt;/p&gt;
+
+&lt;p&gt;The code used to generate the graphs above is available &lt;a href=&quot;/assets/log_scales_1.R&quot;&gt;here&lt;/a&gt;. The data for this post came from &lt;a href=&quot;http://www.ggdc.net/maddison/maddison-project/home.htm&quot;&gt;The Maddison Project&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A Data-Based Analysis of Hacker News</title>
    <link href="http://sameermanek.github.io//2015/02/09/hn-analysis/"/>
-   <updated>2015-02-09T00:00:00-06:00</updated>
+   <updated>2015-02-09T00:00:00-05:00</updated>
    <id>http://sameermanek.github.io/2015/02/09/hn-analysis</id>
    <content type="html">&lt;p&gt;Or: 2048 Con, asking Edward.&lt;/p&gt;
 

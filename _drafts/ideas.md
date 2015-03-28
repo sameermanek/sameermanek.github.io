@@ -7,3 +7,8 @@ type: post
 2. how to do a linear model correctly (?)
 3. R package w/ features I frequently use
 4. Expand on the hacker news idea -- actually load the comments and start to categorize the posts (maybe restrict to high ranking posts)
+5. Some better visualizations of Kayak mytrips data. So much there. 
+6. Search for hotel rooms that are cheaper w/ 2 people than 1
+7. song compositions using empirical markov chains? That's probably pretty difficult, but what if I look for ngrams rather than individual notes? It'd then be pretty derivative (maybe?).
+8. Why linear scale frequently doesn't make sense (see http://www.economist.com/blogs/graphicdetail/2015/03/lee-kuan-yews-singapore)
+
