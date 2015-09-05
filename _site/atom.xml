@@ -4,13 +4,42 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2015-03-28T14:39:10-04:00</updated>
+ <updated>2015-09-05T12:18:41-04:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Dr. Uber or How I Learned to Stop Worrying and Love the Employees</title>
+   <link href="http://sameermanek.github.io//2015/09/06/uber-employees/"/>
+   <updated>2015-09-06T00:00:00-04:00</updated>
+   <id>http://sameermanek.github.io/2015/09/06/uber-employees</id>
+   <content type="html">&lt;p&gt;For the past few months, the &lt;a href=&quot;http://www.newyorker.com/magazine/2015/07/06/gigs-with-benefits&quot;&gt;press&lt;/a&gt; has been &lt;strike&gt;focused&lt;/strike&gt; fixated on whether Uber will be forced to reclassify drivers from contractors to employees, it has ignored a bigger question: what would be the effect of Uber employing millions of drivers?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://recode.net/2015/07/14/uber-could-have-to-pay-an-additional-209-million-to-reclassify-its-drivers-in-california/&quot;&gt;re/code&lt;/a&gt; analyzed Uber’s drivers in California and estimated that employment would cost them an incremental $200 million compared to Uber’s current California revenue of $250M (Uber takes 20% of all UberX transactions and gives the other 80% to the drivers). This could be disastrous to Uber’s current business model and would probably force them to increase prices to users and reduce hourly pay to drivers.  &lt;/p&gt;
+
+&lt;p&gt;Nonetheless, this might be the best possible outcome for Uber. &lt;/p&gt;
+
+&lt;h2 id=&quot;network-effects&quot;&gt;Network Effects&lt;/h2&gt;
+
+&lt;p&gt;Uber’s current business model is heavily reliant on network effects (commonly called a virtuous cycle), David Sacks tweeted quite eloquently. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/davidsacks/status/475073311383105536&quot;&gt;&lt;img src=&quot;/assets/david sacks twitter.png&quot; alt=&quot;David Sacks&#39; virtuous cycle&quot; /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://abovethecrowd.com/2014/07/11/how-to-miss-by-a-mile-an-alternative-look-at-ubers-potential-market-size/&quot;&gt;Bill Gurley&lt;/a&gt;, an early investor in Uber, described in more detail why these network effects justify Uber’s valuation and dominance.&lt;/p&gt;
+
+&lt;p&gt;Yet, &lt;a href=&quot;http://therideshareguy.com/how-to-drive-for-uber-and-lyft-at-the-same-time/&quot;&gt;many&lt;/a&gt; &lt;a href=&quot;https://www.quora.com/Ride-Sharing-Company-Comparisons/Can-you-be-a-Lyft-UberX-and-Sidecar-driver-at-the-same-time&quot;&gt;drivers&lt;/a&gt; &lt;a href=&quot;http://money.cnn.com/2014/08/04/technology/uber-lyft/&quot;&gt;switch&lt;/a&gt; &lt;a href=&quot;https://pando.com/2014/12/03/uber-vs-lyft-a-former-driver-compares-the-two-services/&quot;&gt;between&lt;/a&gt; Uber and Lyft or use both simultaneously. The reason is fairly well understood by economists: low costs of multi-homing on both sides of the marketplace. Because it is almost trivially easy to have accounts and apps for both Uber and Lyft (as a driver or as a rider), ridesharing is not currently a winner-take-all market. In fact, Uber and Lyft could coexist the same way as different credit card networks, ad-supported streaming video services, and instant messenger apps continue to exist. This concept is known as &lt;a href=&quot;http://www.econstor.eu/bitstream/10419/26118/1/555836088.PDF&quot;&gt;multi-homing&lt;/a&gt; and is fairly well documented in literature. &lt;/p&gt;
+
+&lt;p&gt;If Uber and Lyft are forced to employ their drivers, it would be impossible for drivers to work for both simultaneously and very difficult to switch from day to day. Therefore, multi-homing would be essentially impossible for drivers – this would strengthen the already-extant network effects and change ridesharing into a winner-take-all market, which would help the incumbent, Uber.  &lt;/p&gt;
+
+&lt;p&gt;In short, if the gig-economy shifts from a contractor- to employee- based model, the largest players – Uber, Postmates, Instacart, et al – would be protected from smaller potential competitors. &lt;/p&gt;
+
+&lt;p&gt;This might be the best possible thing that could happen to Uber.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>To log or not to log Part 1</title>
