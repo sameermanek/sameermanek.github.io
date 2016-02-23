@@ -30,5 +30,6 @@ Finally, these emails were sent at pretty different times. While it is possible 
 
 While the use of a randomized control trial is laudable, its misuse can misinform and even lead to the wrong conclusions. As more non-specialists use RCTs (the apocalypse must be near -- they're even teaching these things to MBAs nowadays), these errors are more likely to occur. Look to a statistician or a reliable online resource to make sure you don't make these simple mistakes. 
 
-###Notes
+### Notes
+
 *Clearly this post is meant as a satire. I am not a lawyer and don't condone trying to scam anyone. I do not take responsibility for the consequences of this post. I mostly meant to help people understand a little about what makes A/B tests useful and useless.*
