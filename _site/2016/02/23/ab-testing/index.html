@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A/B Testing for Scammers &middot; Sameer Manek
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/atom+xml" title="Sameer Manek" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53387128-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <body>
+
+    <div class="container content">
+      <header class="masthead">
+        <h3 class="masthead-title">
+          <a href="/" title="Home">Sameer Manek</a>
+		  
+              &nbsp;&nbsp;&nbsp;<small><a href="https://www.flickr.com/photos/sameermanek/">Photos</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/projects/">Projects</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/archive/">Archive</a></small>
+          
+              &nbsp;&nbsp;&nbsp;<small><a href="/about/">About</a></small>
+          
+        </h3>
+      </header>
+
+      <main id="maincontent">
+        <article class="post">
+  <h1 class="post-title">A/B Testing for Scammers</h1>
+  <time datetime="2016-02-23T00:00:00-05:00" class="page-date">23 Feb 2016</time>
+  <p>I don’t know whether to feel happy or sad that scammers are A/B testing poorly. I recently received two emails, that were obviously part of an experiment done poorly. They’re shown below, but a few notes for a potential future scammer.</p>
+
+<p><img src="/assets/abtest.png" alt="Scammer Emails" /></p>
+
+<h2 id="test-subjects">Test Subjects</h2>
+
+<p>It isn’t strictly wrong to use the same user for both arms of the A/B test (although then you’d need to test whether the treatment order matters), but for something like this, it is generally better to focus on a two-sample test. Anecdotally, I don’t think people would respond to one and not the other purely as a function of the messaging. Therefore, you should only send each user one treatment within a given time period. While you’d sacrifice some statistical power using a two-sample test rather than a paired test, you’d probably have a more accurate measurement overall. </p>
+
+<h2 id="treatments">Treatments</h2>
+
+<p>Here the scammers changed the amounts in the title, which is a great component to experiment on; they’re testing whether odd numbers are more likely to generate the target behavior than even numbers. Buzzfeed has found <a href="https://medium.com/i-data/29-reasons-youre-reading-this-article-fbf4671327e3#.4d3g5ve8h">something similar</a> with their listicles. </p>
+
+<p>My primary concern with their treatments are that the amounts and currencies differ by quite a bit. It is one thing to test whether someone reacts better/worse to an even/unusual amount, but it is another to test whether the sweet spot is ~$10M or ~$1M, and whether they’d react differently to USD vs GBP. </p>
+
+<p>Another issue related to the treatment: they used different numbers in the body of the text. This seems like a simple oversight, but means that any response they detect may be a function of the inconsistent text, thus potentially nullifying any results from this experiment. </p>
+
+<h2 id="dependent-variable">Dependent Variable</h2>
+
+<p>A little more difficult to notice, but here the scammers would have a difficult time detecting whether there was any response. I think they should have used a subtly different email address for each of the messages, that way they could keep track of responses, although maybe they’re assuming the user will actually just click ‘reply’ and add the email addresses in themselves.</p>
+
+<h2 id="confounding-variables">Confounding Variables</h2>
+
+<p>Finally, these emails were sent at pretty different times. While it is possible that they’re controlling for this (through randomization of when the emails are sent), there’s quite a bit of evidence that the <a href="http://www.wordstream.com/blog/ws/2014/09/04/best-time-to-send-email-campaign">timing of emails matters</a>. By sending one email in mid-morning and the other in the middle of the night (in my time zone, at least), this confounding variable may cause erroneous results. </p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>While the use of a randomized control trial is laudable, its misuse can misinform and even lead to the wrong conclusions. As more non-specialists use RCTs (the apocalypse must be near – they’re even teaching these things to MBAs nowadays), these errors are more likely to occur. Look to a statistician or a reliable online resource to make sure you don’t make these simple mistakes. </p>
+
+<h3 id="notes">Notes</h3>
+
+<p><em>Clearly this post is meant as a satire. I am not a lawyer and don’t condone trying to scam anyone. I do not take responsibility for the consequences of this post. I mostly meant to help people understand a little about what makes A/B tests useful and useless.</em></p>
+
+</article>
+
+<aside class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="//2017/05/15/fcc/">
+            FCC Comments
+            <small><time datetime="2017-05-15T00:00:00-04:00">15 May 2017</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//2015/09/05/uber-employees/">
+            Dr. Uber or How I Learned to Stop Worrying and Love the Employees
+            <small><time datetime="2015-09-05T00:00:00-04:00">05 Sep 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="//2015/03/28/log-scales-1/">
+            To log or not to log Part 1
+            <small><time datetime="2015-03-28T00:00:00-04:00">28 Mar 2015</time></small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</aside>
+
+      </main>
+
+      <footer class="footer">
+        <small>
+        <hr>
+          &copy; <time datetime="2017-05-16T21:57:55-04:00">2017</time>. All rights reserved.
+        </small>
+      </footer>
+    </div>
+
+  </body>
+</html>

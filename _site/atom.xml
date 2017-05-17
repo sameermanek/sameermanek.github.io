@@ -4,7 +4,7 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2015-09-05T12:18:41-04:00</updated>
+ <updated>2017-05-16T21:57:55-04:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
@@ -13,10 +13,92 @@
 
  
  <entry>
+   <title>FCC Comments</title>
+   <link href="http://sameermanek.github.io//2017/05/15/fcc/"/>
+   <updated>2017-05-15T00:00:00-04:00</updated>
+   <id>http://sameermanek.github.io/2017/05/15/fcc</id>
+   <content type="html">&lt;p&gt;Based on an extremely non-scientific analysis, there seem to be two astroturf anti net neutrality campaigns, along with one potentially organic net neutrality campaign (CFIF)&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;Since late April, the FCC has been taking comments on &lt;a href=&quot;https://www.fcc.gov/ecfs/search/filings?proceedings_name=17-108&amp;amp;sort=date_disseminated,DESC&quot;&gt;Docket 17-108 Restoring Internet Freedom&lt;/a&gt;. This has garnered over 1M comments, a large portion of which were in the past week, following &lt;a href=&quot;https://www.youtube.com/watch?v=92vuuZt7wak&quot;&gt;John Oliver’s call to action on May 7th&lt;/a&gt;. The FCC website was so overwhelmed that it &lt;a href=&quot;https://www.engadget.com/2017/05/08/fcc-website-down-net-neutrality-last-week-tonight-john-oliver/&quot;&gt;went offline&lt;/a&gt; for some time immediately after the segment aired. 
+## Content Concentration&lt;/p&gt;
+
+&lt;p&gt;There’s mounting evidence that some of these comments aren’t organic users; in fact, more than half of all comments are verbatim repeats of 3 anti net neutrality comments, all found on anti net neutrality websites. The top comments are shown below (some truncated for clarity/spacing)
+&lt;img src=&quot;/assets/fcc/table.png&quot; alt=&quot;Table of common comments&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Or, to make &lt;a href=&quot;http://www.infovis-wiki.net/index.php/Data-Ink_Ratio&quot;&gt;Tufte truly irate&lt;/a&gt;, an entirely superfluous ink-heavy graphic
+&lt;img src=&quot;/assets/fcc/totals.png&quot; alt=&quot;Graph of common comments&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;timing&quot;&gt;Timing&lt;/h2&gt;
+&lt;p&gt;I think this is the interesting piece. A timeline of the hourly number comments posted for the top three most common comments, alongside a view of the other (apparently organic) comments posted in green. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/fcc/times.png&quot; alt=&quot;Timeline&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The green shows a pattern roughly as expected – an initial gap due to the fcc.gov outage followed by a peak the following evening and a decay (with a somewhat circadian rhythm to it), along with a few gaps, likely corresponding to when the fcc website was overloaded/slow. &lt;/p&gt;
+
+&lt;p&gt;The red and blue comments (from the Taxpayer Protection Alliance and freeourinternet.org) do not follow this or any reasonable pattern. To quantify it, their posting volume is highly correlated with each other (pearson correlation of 0.7 for the week shown above) and uncorrelated with the baseline ‘Other comments’ (between 0.0 and 0.1). &lt;/p&gt;
+
+&lt;p&gt;The behavior of the CFIF message looks almost human-like, at least on this hourly basis. There appear to be gaps/trickles whent he website was having issues and the ramping up and down seems similar in pattern to the baseline ‘Other comments’. It is most correlated with the baseline ‘Other comments’ (correlation coefficient  of 0.5), and the hourly autocorrelation coefficient is similar to the ‘Other comments’ (highly autocorrelated at the first and second lags). While the distribution is very different (when the bulk of the comments were made), most of the ‘Other comments’ were made soon after the John Oliver segment. &lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;While the ‘Obama’ and ‘Soros’ messages seem pretty fishy, I woulnd’t be surprised if the CFIF message was genuinely posted by anti net-neutrality advocates (although likely through some intermediary mechanism, like a form on another webiste). &lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;This is entirely unscientific. There’s a decent chance that all of this is incorrect and I make no claims about the accuracy.&lt;/li&gt;
+  &lt;li&gt;The ‘sources’ of these comments are guesses, at best, based on a combination of reddit and googling. &lt;/li&gt;
+  &lt;li&gt;The FCC is surely tracking more detailed behavior and hopefully will choose to identify which comments are true and which were posted without the listed commenter’s knowledge/permission.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://www.theverge.com/2017/5/10/15610744/anti-net-neutrality-fake-comments-identities&quot;&gt;actual&lt;/a&gt; &lt;a href=&quot;http://www.zdnet.com/article/a-bot-is-flooding-the-fccs-website-with-fake-anti-net-neutrality-comments/&quot;&gt;reporting&lt;/a&gt; being done is way more important than this very high-level summarization with numerous assumptions. I wish they’d note which suspect comments they were following up with (i.e., whether they’re the CFIF or one of the other comments), but either way their actual research is valuable.&lt;/li&gt;
+&lt;/ol&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A/B Testing for Scammers</title>
+   <link href="http://sameermanek.github.io//2016/02/23/ab-testing/"/>
+   <updated>2016-02-23T00:00:00-05:00</updated>
+   <id>http://sameermanek.github.io/2016/02/23/ab-testing</id>
+   <content type="html">&lt;p&gt;I don’t know whether to feel happy or sad that scammers are A/B testing poorly. I recently received two emails, that were obviously part of an experiment done poorly. They’re shown below, but a few notes for a potential future scammer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/abtest.png&quot; alt=&quot;Scammer Emails&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;test-subjects&quot;&gt;Test Subjects&lt;/h2&gt;
+
+&lt;p&gt;It isn’t strictly wrong to use the same user for both arms of the A/B test (although then you’d need to test whether the treatment order matters), but for something like this, it is generally better to focus on a two-sample test. Anecdotally, I don’t think people would respond to one and not the other purely as a function of the messaging. Therefore, you should only send each user one treatment within a given time period. While you’d sacrifice some statistical power using a two-sample test rather than a paired test, you’d probably have a more accurate measurement overall. &lt;/p&gt;
+
+&lt;h2 id=&quot;treatments&quot;&gt;Treatments&lt;/h2&gt;
+
+&lt;p&gt;Here the scammers changed the amounts in the title, which is a great component to experiment on; they’re testing whether odd numbers are more likely to generate the target behavior than even numbers. Buzzfeed has found &lt;a href=&quot;https://medium.com/i-data/29-reasons-youre-reading-this-article-fbf4671327e3#.4d3g5ve8h&quot;&gt;something similar&lt;/a&gt; with their listicles. &lt;/p&gt;
+
+&lt;p&gt;My primary concern with their treatments are that the amounts and currencies differ by quite a bit. It is one thing to test whether someone reacts better/worse to an even/unusual amount, but it is another to test whether the sweet spot is ~$10M or ~$1M, and whether they’d react differently to USD vs GBP. &lt;/p&gt;
+
+&lt;p&gt;Another issue related to the treatment: they used different numbers in the body of the text. This seems like a simple oversight, but means that any response they detect may be a function of the inconsistent text, thus potentially nullifying any results from this experiment. &lt;/p&gt;
+
+&lt;h2 id=&quot;dependent-variable&quot;&gt;Dependent Variable&lt;/h2&gt;
+
+&lt;p&gt;A little more difficult to notice, but here the scammers would have a difficult time detecting whether there was any response. I think they should have used a subtly different email address for each of the messages, that way they could keep track of responses, although maybe they’re assuming the user will actually just click ‘reply’ and add the email addresses in themselves.&lt;/p&gt;
+
+&lt;h2 id=&quot;confounding-variables&quot;&gt;Confounding Variables&lt;/h2&gt;
+
+&lt;p&gt;Finally, these emails were sent at pretty different times. While it is possible that they’re controlling for this (through randomization of when the emails are sent), there’s quite a bit of evidence that the &lt;a href=&quot;http://www.wordstream.com/blog/ws/2014/09/04/best-time-to-send-email-campaign&quot;&gt;timing of emails matters&lt;/a&gt;. By sending one email in mid-morning and the other in the middle of the night (in my time zone, at least), this confounding variable may cause erroneous results. &lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;While the use of a randomized control trial is laudable, its misuse can misinform and even lead to the wrong conclusions. As more non-specialists use RCTs (the apocalypse must be near – they’re even teaching these things to MBAs nowadays), these errors are more likely to occur. Look to a statistician or a reliable online resource to make sure you don’t make these simple mistakes. &lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Clearly this post is meant as a satire. I am not a lawyer and don’t condone trying to scam anyone. I do not take responsibility for the consequences of this post. I mostly meant to help people understand a little about what makes A/B tests useful and useless.&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Dr. Uber or How I Learned to Stop Worrying and Love the Employees</title>
-   <link href="http://sameermanek.github.io//2015/09/06/uber-employees/"/>
-   <updated>2015-09-06T00:00:00-04:00</updated>
-   <id>http://sameermanek.github.io/2015/09/06/uber-employees</id>
+   <link href="http://sameermanek.github.io//2015/09/05/uber-employees/"/>
+   <updated>2015-09-05T00:00:00-04:00</updated>
+   <id>http://sameermanek.github.io/2015/09/05/uber-employees</id>
    <content type="html">&lt;p&gt;For the past few months, the &lt;a href=&quot;http://www.newyorker.com/magazine/2015/07/06/gigs-with-benefits&quot;&gt;press&lt;/a&gt; has been &lt;strike&gt;focused&lt;/strike&gt; fixated on whether Uber will be forced to reclassify drivers from contractors to employees, it has ignored a bigger question: what would be the effect of Uber employing millions of drivers?&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://recode.net/2015/07/14/uber-could-have-to-pay-an-additional-209-million-to-reclassify-its-drivers-in-california/&quot;&gt;re/code&lt;/a&gt; analyzed Uber’s drivers in California and estimated that employment would cost them an incremental $200 million compared to Uber’s current California revenue of $250M (Uber takes 20% of all UberX transactions and gives the other 80% to the drivers). This could be disastrous to Uber’s current business model and would probably force them to increase prices to users and reduce hourly pay to drivers.  &lt;/p&gt;
