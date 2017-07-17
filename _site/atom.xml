@@ -4,13 +4,82 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2017-05-16T21:57:55-04:00</updated>
+ <updated>2017-07-17T11:06:26-04:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Identifying 'good' photographs</title>
+   <link href="http://sameermanek.github.io//2017/07/15/photo-quality/"/>
+   <updated>2017-07-15T00:00:00-04:00</updated>
+   <id>http://sameermanek.github.io/2017/07/15/photo-quality</id>
+   <content type="html">&lt;p&gt;I use deep learning to try identify which pictures I’ve taken are good (using a loosely defined version of ‘good’). The resultant convolutional neural network (CNN) performs well (0.81 AUC), helped me identify some of my own biases, and seems like a fairly interesting start for more analysis. &lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;Applying deep learning to image recognition is not new; more recently though, deep learning has been used to rate image aesthetics (e.g., &lt;a href=&quot;http://ieeexplore.ieee.org/document/7243357/&quot;&gt;Lu&lt;/a&gt;) and very recently, there’s been an uptick in using deep learning algorithms to replace photographers (e.g., &lt;a href=&quot;https://arxiv.org/abs/1707.03491&quot;&gt;Fang&lt;/a&gt; and &lt;a href=&quot;https://www.kickstarter.com/projects/2092430307/arsenal-the-intelligent-camera-assistant-0&quot;&gt;Arsenal&lt;/a&gt;[1]). I attempted something similar, albeit hugely simplified myself, largely as a deep learning exercise that was more interesting than tweaking the architecture of existing &lt;a href=&quot;https://www.cs.toronto.edu/~kriz/cifar.html&quot;&gt;CIFAR-10&lt;/a&gt; recognition &lt;a href=&quot;http://cs231n.github.io/convolutional-networks/&quot;&gt;CNNs&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Using mostly my own photographs, my system was able to identify the photos that I decided were ‘good’ (read: not terrible). The results were ~71% accurate (with an unbalanced test set) and had an AUC of 0.81, as shown below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/photo-quality/test_auc_1.png&quot; alt=&quot;AUC of test set&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;data&quot;&gt;Data&lt;/h2&gt;
+&lt;p&gt;Here’s where things start to get interesting. As a (digital hoarder) well-organized individual, I maintained copies of most of the photos I’ve taken on recent trips, having organized them into ‘good’ and ‘bad’ folders. I’m not a good photographer, so my usual method is to capture a bunch and hope that I get a few decent photos by sheer chance. I pulled the photographs from three trips I’ve taken within the past three years. This netted me 1,849 photos, 438 of which I thought were ‘good’. I incorporated an additional 111 photos taken by others on these same trips to net 549 ‘good’ photos.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-issues&quot;&gt;Data Issues&lt;/h3&gt;
+
+&lt;h4 id=&quot;samples&quot;&gt;Samples&lt;/h4&gt;
+&lt;p&gt;This is a pretty small data set for deep learning applications. To account for this, I strove to minimize the total number of tunable parameters, and ended up with ~47k (compared to &lt;a href=&quot;http://cs231n.github.io/convolutional-networks/&quot;&gt;~60M for AlexNet and ~140M for VGGNet&lt;/a&gt;). While this reduced my maximum potential performance and flexibility, it helped deal with the relatively low number of samples.&lt;/p&gt;
+
+&lt;h4 id=&quot;unbalanced-classes&quot;&gt;Unbalanced Classes&lt;/h4&gt;
+&lt;p&gt;Roughly 3/4 of the images I had were classified as ‘bad’. I sampled from the training set with replacement and oversampled the ‘good’ photos to account for this.&lt;/p&gt;
+
+&lt;h4 id=&quot;varying-image-sizes&quot;&gt;Varying Image Sizes&lt;/h4&gt;
+&lt;p&gt;I resized images to 480px wide, but maintained their original aspect ratio. This caused two issues:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The model would have to handle differenly sized images. I dealt with this by introducing a &lt;a href=&quot;https://arxiv.org/pdf/1312.4400.pdf&quot;&gt;global average pooling&lt;/a&gt; layer after before a fully connected (output) layer. I don’t think this is an entirely conventional use of the global average pooling, but architecturally allowed me to handle various-sized images.&lt;/li&gt;
+  &lt;li&gt;As a pure data-formatting issue, the various sizes constrained how I constructed batches. That is, all batches would need to be of the same dimensions. I randomly sampled images from the training set with replacement to construct batches, but that means that many batches ended up being repeats of the same image (e.g., I only had 1 480x544 image in my training set). To prevent this oversampling from influencing the model too much, I used a relatively small batch size (4 photos per batch). &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;biased-data-set&quot;&gt;Biased Data Set&lt;/h4&gt;
+&lt;p&gt;I labeled all the images myself, prior to starting this project, over a relatively short amount of time. The ‘good’ images were generally corrected/adjusted in lightroom, whereas the ‘bad’ images generally were not. This created a biased data set, which certainly makes this model less generally applicable. It does make the problem much easier though – it is presumably easier to systematically identify my preferences than some abstract notion of ‘good’ vs ‘bad’ photos. &lt;/p&gt;
+
+&lt;h2 id=&quot;model&quot;&gt;Model&lt;/h2&gt;
+&lt;p&gt;The model is a fairly straightforward convolutional neural network (CNN). I chose to use several convolution layers to allow the network to have a broader (effective) visual field without increasing the number of parameters too much. &lt;/p&gt;
+
+&lt;p&gt;Sorry for the crummy screenshot; I’m working to incorporate a more clear diagram.
+&lt;img src=&quot;/assets/photo-quality/model_architecture_stand_in.png&quot; alt=&quot;Model Architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;performance-and-discussion&quot;&gt;Performance and Discussion&lt;/h2&gt;
+&lt;p&gt;The plot below shows how the performance changed over time. Because of the small batch size, I’m only showing the moving haverage of the training set performance; otherwise the data would be far too noisy. As you can see, the validaiton set performance bounces around quite a bit (likely due to training on small batches that weren’t simple random samples). &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/photo-quality/performance.png&quot; alt=&quot;Performance by batch&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The performance on the validation data set starts to plateau around batch 10,000, but appears to still be improving with more batches; i.e., this model is probably underfit. The performance on the training set is improving, and would be expected to continue to improve (as the model would eventually start to overfit). &lt;/p&gt;
+
+&lt;p&gt;As a validation, I manually inspected the test set performance. I expected it to identify my own biases (e.g., landscapes &amp;gt; portraits, wide angle &amp;gt; tight angle, a solid horizon at the bottom 1/3rd, etc). Some of these are shown below; the first thirteen are high-scoring images, the last twelve are low-scoring images; images outlined in red are misclassified. I redacted potentially identifiable faces for privacy and shrank the images.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/photo-quality/test_grid_5_5.jpg&quot; alt=&quot;Sample Images&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The model appears to have picked up on some of my biases (many of which were unknown to myself). Clearly I’m biased towards blue, white, and green, I seem to prefer non-flat horizons, and at least a few people in the photo. &lt;/p&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;I worked on this project entirely for fun, so there are still quite a few areas I’d like to explore. I’m most interested in better understanding what the network is ‘thinking’; i.e., whether it has identified simple heuristics (like color and regions of contrast). To that end, I’m planning to apply deep dream to this to try and better understand what it’s seeing (and whether I can transform ‘bad’ photos into ‘good’ ones that simply). &lt;/p&gt;
+
+&lt;p&gt;There’s been some interesting work done on broader photo sets (e.g., the &lt;a href=&quot;https://github.com/shubhamchaudhary/aesthetics&quot;&gt;Ava/DPChallenge photo libraries&lt;/a&gt;), and I am curious to try those out – to try applying this trained model to those data sets, and conversely train on those data sets to evaluate my own pictures. &lt;/p&gt;
+
+&lt;p&gt;I performed this work locally on CPU using a combination of R, Keras, and Tensorflow. I had very little free memory, so I kept most of the data on disk and found that it wasn’t a huge hit to performance. To work with these larger data sets, I’ll likely move to a cloud GPU-based solution (e.g., AWS) and maybe even try to use spot instances, which would make the engineering somewhat more of a challenge (i.e., moving to/from disk will become a significant handicap, and it’ll need to be more fault tolerant/scalable).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;[1]From what I can tell, &lt;a href=&quot;https://witharsenal.com/blog/choosing-camera-settings/&quot;&gt;Arsenal&lt;/a&gt; uses deep learning to recognize (objects in) the scene and then applies a set of expert-defined parameters in response to water/forests/etc. If well done, that’s certainly nothing to sneeze at, but it sounds like a different implementation of built-in &lt;a href=&quot;http://docs.esupport.sony.com/dvimag/DSCRX100_guide/en/contents/02/03/02/02.html&quot;&gt;scene recognition auto mode&lt;/a&gt; that already exists in many cameras. Happy to be corrected if I’m wrong though.&lt;/em&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>FCC Comments</title>
