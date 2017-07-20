@@ -4,7 +4,7 @@
  <title>Sameer Manek</title>
  <link href="http://sameermanek.github.io/atom.xml" rel="self"/>
  <link href="http://sameermanek.github.io/"/>
- <updated>2017-07-17T11:06:26-04:00</updated>
+ <updated>2017-07-20T11:12:52-04:00</updated>
  <id>http://sameermanek.github.io</id>
  <author>
    <name>Sameer Manek</name>
@@ -56,7 +56,7 @@
 &lt;img src=&quot;/assets/photo-quality/model_architecture_stand_in.png&quot; alt=&quot;Model Architecture&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;performance-and-discussion&quot;&gt;Performance and Discussion&lt;/h2&gt;
-&lt;p&gt;The plot below shows how the performance changed over time. Because of the small batch size, I’m only showing the moving haverage of the training set performance; otherwise the data would be far too noisy. As you can see, the validaiton set performance bounces around quite a bit (likely due to training on small batches that weren’t simple random samples). &lt;/p&gt;
+&lt;p&gt;The plot below shows how the performance changed over time. Because of the small batch size, I’m only showing the moving average of the training set performance; otherwise the data would be far too noisy. As you can see, the validation set performance bounces around quite a bit (likely due to training on small batches that weren’t simple random samples). &lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/photo-quality/performance.png&quot; alt=&quot;Performance by batch&quot; /&gt;&lt;/p&gt;
 

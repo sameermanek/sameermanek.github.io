@@ -39,7 +39,7 @@ Sorry for the crummy screenshot; I'm working to incorporate a more clear diagram
 ![Model Architecture](/assets/photo-quality/model_architecture_stand_in.png)
 
 ## Performance and Discussion
-The plot below shows how the performance changed over time. Because of the small batch size, I'm only showing the moving haverage of the training set performance; otherwise the data would be far too noisy. As you can see, the validaiton set performance bounces around quite a bit (likely due to training on small batches that weren't simple random samples). 
+The plot below shows how the performance changed over time. Because of the small batch size, I'm only showing the moving average of the training set performance; otherwise the data would be far too noisy. As you can see, the validation set performance bounces around quite a bit (likely due to training on small batches that weren't simple random samples). 
 
 ![Performance by batch](/assets/photo-quality/performance.png)
 
