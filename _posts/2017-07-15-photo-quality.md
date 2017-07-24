@@ -61,3 +61,8 @@ I performed this work locally on CPU using a combination of R, Keras, and Tensor
 ----
 
 _[1]From what I can tell, [Arsenal](https://witharsenal.com/blog/choosing-camera-settings/) uses deep learning to recognize (objects in) the scene and then applies a set of expert-defined parameters in response to water/forests/etc. If well done, that's certainly nothing to sneeze at, but it sounds like a different implementation of built-in [scene recognition auto mode](http://docs.esupport.sony.com/dvimag/DSCRX100_guide/en/contents/02/03/02/02.html) that already exists in many cameras. Happy to be corrected if I'm wrong though._
+
+----
+
+_Mini update: I received a couple requests to see the code used to do this. I've posted it on [github](https://github.com/sameermanek/identifying-good-photos) (it's very unpolished)._
+
