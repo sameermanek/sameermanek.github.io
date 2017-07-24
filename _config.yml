@@ -6,7 +6,7 @@ title:            Sameer Manek
 tagline:          ''
 url:              http://sameermanek.github.io
 paginate:         5
-baseurl:          /
+#baseurl:          /
 author:
   name:           Sameer Manek
   url:            http://sameermanek.github.io
