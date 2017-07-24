@@ -4,7 +4,8 @@ permalink:        pretty
 # Setup
 title:            Sameer Manek
 tagline:          ''
-url:              http://sameermanek.github.io
+#url:              http://sameermanek.github.io
+url:              http://sameermanek.com
 paginate:         5
 #baseurl:          /
 author:
